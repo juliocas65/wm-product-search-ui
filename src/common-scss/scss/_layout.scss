@@ -1,0 +1,25 @@
+.background-img {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    picture {
+        max-height: 50%;
+        height: 50%;
+        width: 100%;
+        img {
+            width: 100%;
+        }
+    }
+    &:after {
+        content: "";
+        display: block;
+        width: 110%;
+        height: 30%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #fff;
+        transform: rotate(-3.6deg);
+        transform-origin: left top;
+    }
+}

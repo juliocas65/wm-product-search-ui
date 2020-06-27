@@ -1,0 +1,78 @@
+@import 'constants';
+.btn {
+    letter-spacing: 0.16rem;
+    text-transform: uppercase;
+    padding: 0.6rem 1rem;
+    font-weight: 700;
+    height: 48px;
+    &.btn-primary {
+        color: white;
+        background: $btn-primary-color;
+        border-color: $btn-primary-color;
+        &:focus {
+            background: $btn-primary-color;
+            border-color: $btn-primary-color;
+        }
+        &:active,
+        &:active:focus,
+        &:active:hover,
+        &:hover,
+        &:not(:disabled):not(.disabled):active {
+            background: $btn-primary-color-hover;
+            border-color: $btn-primary-color-hover;
+        }
+        &:disabled,
+        &:disabled:hover {
+            background: $btn-primary-color;
+            border-color: $btn-primary-color;
+            opacity: 0.5;
+        }
+    }
+    &.btn-secondary {
+        margin: 0 auto;
+        color: #fff;
+        background: $btn-secondary-color;
+        border-color: $btn-secondary-color;
+        &:focus {
+            background: $btn-secondary-color;
+            border-color: $btn-secondary-color;
+        }
+        &:active,
+        &:active:focus,
+        &:active:hover,
+        &:hover,
+        &:not(:disabled):not(.disabled):active {
+            background: $btn-secondary-color-hover;
+            border-color: $btn-secondary-color-hover;
+        }
+        &:disabled,
+        &:disabled:hover {
+            background: $btn-secondary-color;
+            border-color: $btn-secondary-color;
+            opacity: 0.5;
+        }
+    }
+    &.btn-default {
+        color: #000;
+        background: $btn-tertiary-color;
+        border-color: $btn-tertiary-color;
+        &:focus {
+            background: $btn-tertiary-color;
+            border-color: $btn-tertiary-color;
+        }
+        &:active,
+        &:active:focus,
+        &:active:hover,
+        &:hover,
+        &:not(:disabled):not(.disabled):active {
+            background: $btn-tertiary-color-hover;
+            border-color: $btn-tertiary-color-hover;
+        }
+        &:disabled,
+        &:disabled:hover {
+            background: $btn-tertiary-color;
+            border-color: $btn-tertiary-color;
+            opacity: 0.5;
+        }
+    }
+}

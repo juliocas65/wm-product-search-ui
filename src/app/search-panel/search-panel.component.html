@@ -1,0 +1,39 @@
+<div class="container-panel">
+  <!-- panel controles -->
+  <div class="row">
+    <div class="col-12 container-banner">
+      <div class="form-group col-4">
+        <img class="logo-panel justify-content-start" src="assets/img/wmtcl.png" alt="Lider.cl"/>
+      </div>
+      <div class="form-group col-8">
+        <form [formGroup]="form" id="form" novalidate>
+          <input type="text" id="search-input" (keyup.enter)="doSearch($event)" class="form-control" formControlName="search" name="search" maxlength="100" placeholder="¿Qué estás buscando?" autocomplete="off">
+        </form>
+      </div>
+    </div>
+    <div class="col-12 container-subbanner">
+      ¡Agenda tu visita y ahorra tiempo aquí!
+    </div>
+    <!-- Resultados -->
+    <div class="form-group col-3 container-panel-objects">
+      <label class="results">Resultados para <strong>{{search}}</strong>:</label>
+    </div>
+    <!-- Articulos -->
+    <div class="form-group col-9 container-panel-objects">
+      <div class="container">
+        <div class="card-deck col-4 mb-3 text-center">
+          <div class="card mb-4 box-shadow">
+            <div class="card-header container-article">
+              <img class="logo-article justify-content-start" src="assets/img/wmtcl.png" alt="Lider.cl"/>
+            </div>
+            <div class="card-body descripcion-article">
+              <h4 class="card-title pricing-card-title trademark-article">labba<small>Television 8K</small></h4>
+              <h2 class="price-new-article"><strong>$270.000</strong><span class="badge badge-pill badge-danger">50%</span></h2>
+              <h5 class="price-old-article">$540.000</h5>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
