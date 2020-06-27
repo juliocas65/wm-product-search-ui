@@ -1,10 +1,9 @@
 @import 'constants';
 .btn {
-    letter-spacing: 0.16rem;
-    text-transform: uppercase;
-    padding: 0.6rem 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
     font-weight: 700;
-    height: 48px;
+    height: 36px;
     &.btn-primary {
         color: white;
         background: $btn-primary-color;

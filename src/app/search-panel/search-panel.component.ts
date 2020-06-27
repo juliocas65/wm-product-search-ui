@@ -50,7 +50,7 @@ export class SearchPanelComponent extends BaseComponent implements OnInit {
     this.search = this.getFormControl('search').value;
       let params = new HttpParams()
       .set("search", this.search)
-
+      this.products = []
       this.loaderService.display(true)
       this.invoker.makeGet('GET_PRODUCTS', params)
         .subscribe(
@@ -62,6 +62,7 @@ export class SearchPanelComponent extends BaseComponent implements OnInit {
           },
           error => {
             this.loaderService.display(false)
+            this.products = []
           }
         );
   }
@@ -69,7 +70,7 @@ export class SearchPanelComponent extends BaseComponent implements OnInit {
   processData(dataIn) {
     this.data = dataIn.data
     if (this.data !== undefined) {
-      this.data.forEach((product: any) => { 
+      this.data.forEach((product: any) => {
         this.products.push(product);
       });
     }

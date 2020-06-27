@@ -36,6 +36,12 @@ table {
   height: 28px;
 }
 
+.container-results {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
 .container-panel {
   background: rgba(0, 0, 0, 0.1);
 }
@@ -51,7 +57,6 @@ table {
   padding-top: 2rem;
   padding-bottom: 5rem;
   padding-left: 5rem;
-  padding-right: 5rem;
 }
 
 .container-details {
@@ -70,7 +75,7 @@ table {
 }
 
 .logo-article {
-  width: 70%;
+  width: 60%;
   margin-top: 3rem;
   margin-bottom: 3rem;
   margin-left: 3rem;
@@ -93,11 +98,19 @@ table {
 }
 
 .trademark-article {
-  font-weight: bold
+  font-weight: bold;
+}
+
+.result-margin {
+  padding-left: .5rem;
 }
 
 .results {
   font-size: 1.2rem;
+}
+
+.text-search {
+  border-radius: 1rem;
 }
 
 /////////////////////////////////////////////////////////
