@@ -21,15 +21,17 @@
     <!-- Articulos -->
     <div class="form-group col-9 container-panel-objects">
       <div class="container">
-        <div class="card-deck col-4 mb-3 text-center">
-          <div class="card mb-4 box-shadow">
-            <div class="card-header container-article">
-              <img class="logo-article justify-content-start" src="assets/img/wmtcl.png" alt="Lider.cl"/>
-            </div>
-            <div class="card-body descripcion-article">
-              <h4 class="card-title pricing-card-title trademark-article">labba<small>Television 8K</small></h4>
-              <h2 class="price-new-article"><strong>$270.000</strong><span class="badge badge-pill badge-danger">50%</span></h2>
-              <h5 class="price-old-article">$540.000</h5>
+        <div *ngIf="products.length > 0">
+          <div class="card-deck col-4 mb-3 text-center">
+            <div class="card mb-4 box-shadow">
+              <div class="card-header container-article">
+                <img class="logo-article justify-content-start" src="{{products[0].image}}" alt="Lider.cl"/>
+              </div>
+              <div class="card-body descripcion-article">
+                <h4 class="card-title pricing-card-title trademark-article">{{products[0].brand || ""}}<small>{{products[0].description}}</small></h4>
+                <h2 class="price-new-article"><strong>${{products[0].price}}</strong><span class="badge badge-pill badge-danger">50%</span></h2>
+                <h5 class="price-old-article">${{products[0].newPrice}}</h5>
+              </div>
             </div>
           </div>
         </div>

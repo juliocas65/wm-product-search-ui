@@ -24,13 +24,14 @@ import { LoaderService } from '../../shared/core/LoaderService';
 export class SearchPanelComponent extends BaseComponent implements OnInit {
 
   public data: any[] = [];
+  public products: any[] = [];
   public search;
 
   constructor(
     private fb: FormBuilder,
     private router: Router,
     private invoker: InvokerService,
-    public loaderService: LoaderService
+    public loaderService: LoaderService,
   ) {
     super();
   }
@@ -50,31 +51,26 @@ export class SearchPanelComponent extends BaseComponent implements OnInit {
       let params = new HttpParams()
       .set("search", this.search)
 
-      this.data = []
-
       this.loaderService.display(true)
       this.invoker.makeGet('GET_PRODUCTS', params)
         .subscribe(
           (dataIn: any) => {
             this.loaderService.display(false)
-            if (dataIn.code === "002") {
+            if (dataIn.code === "SUCCESS") {
               this.processData(dataIn)
             }
           },
           error => {
             this.loaderService.display(false)
-            this.data = []
           }
         );
   }
 
   processData(dataIn) {
-    var data = dataIn.data
-    if (data !== undefined) {
-      data.forEach((log: any) => {
-        if (log.mensaje) {
-
-        }
+    this.data = dataIn.data
+    if (this.data !== undefined) {
+      this.data.forEach((product: any) => { 
+        this.products.push(product);
       });
     }
   }

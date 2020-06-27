@@ -10,6 +10,7 @@
     "@angular/core": "8.0.3",
     "@angular/fire": "5.2.1",
     "@angular/forms": "8.0.3",
+    "@angular/http": "7.2.16",
     "@angular/platform-browser": "8.0.3",
     "@angular/platform-browser-dynamic": "8.0.3",
     "@angular/router": "8.0.3",
@@ -22,7 +23,7 @@
     "jasmine-core": "2.99.1",
     "jasmine-marbles": "0.6.0",
     "rxjs": "6.5.2",
-    "rxjs-compat": "6.5.2",
+    "rxjs-compat": "^6.5.2",
     "tslib": "1.10.0",
     "web-animations-js": "2.3.2",
     "zone.js": "0.9.1"
