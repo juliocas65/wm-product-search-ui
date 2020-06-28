@@ -12,11 +12,11 @@ export class BaseComponent {
   hasError(controlName: string) {
     const control = this.getFormControl(controlName);
     if (control.invalid && control.touched) {
-      return { 'error': true, 'class': 'is-invalid' };
+      return { error: true, class: 'is-invalid' };
     } else if (control.valid && control.touched) {
-      return { 'error': false, 'class': 'is-valid' };
+      return { error: false, class: 'is-valid' };
     } else {
-      return { 'error': false, 'class': '' };
+      return { error: false, class: '' };
     }
   }
 
@@ -28,11 +28,11 @@ export class BaseComponent {
       && (control.errors[errorType].value === true || control.errors[errorType] === true)
       && control.touched
     ) {
-      return { 'error': true, 'class': 'is-invalid' };
+      return { error: true, class: 'is-invalid' };
     } else if (control.valid && control.touched) {
-      return { 'error': false, 'class': 'is-valid' };
+      return { error: false, class: 'is-valid' };
     } else {
-      return { 'error': false, 'class': '' };
+      return { error: false, class: '' };
     }
   }
 

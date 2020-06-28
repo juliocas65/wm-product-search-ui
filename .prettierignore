@@ -1,0 +1,7 @@
+package.json
+tsconfig.json
+tsconfig.*.json
+yarn-lock.json
+*.spec.ts
+src/app/infrastructure
+src/app/base

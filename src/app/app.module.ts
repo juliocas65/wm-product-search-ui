@@ -1,25 +1,21 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
-
-import { Routes } from '@angular/router';
 import { Routing } from './app.routing';
-import { HttpClient } from '@angular/common/http';
 
 import { SearchPanelComponent } from './search-panel/search-panel.component';
 import { SearchPanelModule } from './search-panel/search-panel.component.module';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { InvokerService } from '../shared/core/InvokerService';
-
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthGuard } from '../shared/core/AuthGuard';
+import { InvokerService } from '../shared/core/InvokerService';
 import { LoaderService } from '../shared/core/LoaderService';
 import { SharedModule } from '../shared/core/SharedModule';
+
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   imports: [
@@ -39,8 +35,8 @@ import { SharedModule } from '../shared/core/SharedModule';
   declarations: [
     AppComponent
   ],
-  bootstrap: [ AppComponent ],
-  providers: [ 
+  bootstrap: [AppComponent],
+  providers: [
     HttpClient,
     InvokerService,
     AuthGuard,

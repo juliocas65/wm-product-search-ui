@@ -7,7 +7,7 @@ export const ENV = {
   APIKEY: '',
   GET_PRODUCTS: {
     METHOD: 'get',
-    ENDPOINT: 'http://localhost:3001/products/palindrome',
+    ENDPOINT: 'http://localhost:3001/products/search/',
     TIMEOUT: 60000
   },
 };

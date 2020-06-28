@@ -1,11 +1,5 @@
-FROM hub.fif.tech/base/nginx-fif:1.17.3-latest
+FROM nginx:1.17.1-alpine
 
-ARG ENVIRONMENT
+COPY /dockerfiles/nginx.conf /etc/nginx/nginx.conf
 
-COPY nginx/$ENVIRONMENT.conf /etc/nginx/default.conf
-
-COPY dist/ /usr/share/nginx/html
-
-EXPOSE 3010
-
-USER nginx
+COPY /dist/ /usr/share/nginx/html

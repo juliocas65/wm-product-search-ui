@@ -1,8 +1,9 @@
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ENV } from '../../environments/environment';
+
 import { Observable } from 'rxjs';
-import { switchMap, map } from 'rxjs/operators';
+import { map, switchMap } from 'rxjs/operators';
 
 @Injectable()
 export class InvokerService {
@@ -40,21 +41,19 @@ export class InvokerService {
 
   public makePost(resource: string, headers: {}, body: {}): Observable<HttpResponse<string>> {
     const endpoint = ENV[resource].ENDPOINT;
-    const timeout = ENV[resource].TIMEOUT;
-    return this.http.post<any>(endpoint, body, { headers: headers, observe: 'response' });
+    return this.http.post<any>(endpoint, body, { headers, observe: 'response' });
   }
 
   public makeGet(resource: string, paramsIn: {}): Observable<HttpResponse<string>> {
-    let options = { 
+    const options = {
       headers: this.getDefaultHeaders(),
       params: paramsIn
     };
     if (ENV.name === 'local') {
       options.headers = this.getBasicHeaders();
     }
-    
+
     const endpoint = ENV[resource].ENDPOINT;
-    const timeout = ENV[resource].TIMEOUT;
     return this.http.get<any>(endpoint, { headers: options.headers, params: options.params });
   }
 }

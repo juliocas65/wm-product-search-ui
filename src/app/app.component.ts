@@ -4,28 +4,26 @@ import { LoaderService } from '../shared/core/LoaderService';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: [ './app.component.css' ]
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit  {
+export class AppComponent implements OnInit {
 
   public showLoader: boolean;
 
   constructor(
     private loaderService: LoaderService,
-  ){
+  ) {
     this.steLoaderStatus();
   }
 
   public ngOnInit() { }
-  
+
   private steLoaderStatus = () => {
     this.loaderService.status.subscribe((val: boolean) => {
       this.showLoader = val;
     });
   }
 }
-
-
 
 /*
 Copyright Google LLC. All Rights Reserved.
