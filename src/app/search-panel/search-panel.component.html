@@ -3,11 +3,12 @@
   <div class="row">
     <div class="col-12 container-banner">
       <div class="form-group col-4">
-        <img class="logo-panel justify-content-start" src="assets/img/wmtcl.png" alt="Lider.cl"/>
+        <img class="logo-panel justify-content-start" src="assets/img/wmtcl.png" alt="Lider.cl" />
       </div>
       <div class="form-group col-6">
         <form [formGroup]="form" id="form" novalidate>
-          <input type="search" id="search-input" (keyup.enter)="doSearch($event)" class="form-control text-search" formControlName="search" name="search" maxlength="100" placeholder="¿Qué estás buscando?" autocomplete="off">
+          <input type="search" id="search-input" (keyup.enter)="doSearch($event)" class="form-control text-search" formControlName="search"
+            name="search" maxlength="100" placeholder="¿Qué estás buscando?" autocomplete="off">
         </form>
       </div>
       <div class="form-group col-2">
@@ -20,7 +21,8 @@
     <!-- Resultados -->
     <div class="col-12 container-results" *ngIf="products.length > 0">
       <div class="form-group col-3 container-panel-objects">
-        <label class="results">Resultados para <strong>{{search}}</strong>:</label>
+        <label class="results">Resultados para
+          <strong>{{search}}</strong>:</label>
       </div>
       <!-- Articulos -->
       <div class="form-group col-9 container-panel-objects">
@@ -28,7 +30,7 @@
           <div *ngFor="let product of products" class="card-deck col-4 text-center">
             <div class="form-group card mb-4 box-shadow">
               <div class="card-header container-article">
-                <img class="logo-article justify-content-start" src="https://{{product.image}}" alt="Lider.cl"/>
+                <img class="logo-article justify-content-start" src="https://{{product.image}}" alt="Lider.cl" />
               </div>
               <div class="card-body descripcion-article">
                 <h4 class="card-title pricing-card-title trademark-article">
@@ -48,6 +50,17 @@
         </div>
       </div>
     </div>
+    <div class="col-12 container-results">
+      <div class="form-group col-3 container-panel-objects" *ngIf="products.length === 0 && search !== undefined">
+        <label class="results">Resultados no encontrados para
+          <strong>{{search}}</strong>. Intenta con nuevamente con otra frase.</label>
+      </div>
+      <div class="form-group col-3 container-panel-objects" *ngIf="products.length === 0 && search === undefined">
+        <label class="results">Busca tus productos en
+          <strong>lider.cl</strong>. Ingresa un id de producto, palabra o frase en el buscador y presiona enter.</label>
+      </div>
+    </div>
+    <div class="col-12 container-footer"></div>
     <div class="col-12 container-subbanner"></div>
   </div>
 </div>
