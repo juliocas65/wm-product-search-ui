@@ -18,6 +18,7 @@ UI Service that provides service search.
 ### Build and run as Docker Container:
 ---------------------
 * Ensure you get up the wm-product-search-back service instance.
+* Build the service locally: ``` npm run build ```
 * Run the command ``` sh build-local.sh ``` on the root of this repository. This will build the docker image tagged with :local and then will run the container.
 * Then your service will be up on http://localhost:8080. Try it! You will see a page with a Banner to Search products. Insert your words and press enter. Results will show below.
 
@@ -26,3 +27,4 @@ UI Service that provides service search.
 * Unit tests: ``` npm run test ```
 * Coverage: ``` npm run test:coverage ```
 * Eslint check: ``` npm run lint ```
+* E2E test: run ``` npm run start-e2e ``` to selenium server up and then run ``` npm run e2e ```

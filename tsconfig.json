@@ -12,7 +12,8 @@
     "target": "es5",
     "types": [
       "node",
-      "jest"
+      "jest",
+      "cucumber"
     ],
     "typeRoots": [
       "node_modules/@types"
